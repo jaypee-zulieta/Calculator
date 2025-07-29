@@ -16,7 +16,9 @@ namespace WindowsFormsApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calculator());
+            ICalculatorLogic calculatorLogic = new CalculatorLogicImpl();
+            Calculator calculator = new Calculator(calculatorLogic);
+            Application.Run(calculator);
         }
     }
 }

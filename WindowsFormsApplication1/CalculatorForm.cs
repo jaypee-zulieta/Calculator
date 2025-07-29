@@ -16,7 +16,17 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
             this.SetCurrentTextBox(txtNum1);
+            this.calculatorLogic = new CalculatorLogicImpl();
         }
+
+        public Calculator(ICalculatorLogic calculatorLogic)
+        {
+            InitializeComponent();
+            this.SetCurrentTextBox(txtNum1);
+            this.calculatorLogic = calculatorLogic;
+        }
+
+        private ICalculatorLogic calculatorLogic;
 
         private TextBox currentTextBox;
 
@@ -39,7 +49,7 @@ namespace WindowsFormsApplication1
             {
                 double x = double.Parse(txtNum1.Text);
                 double y = double.Parse(txtNum2.Text);
-                double result = add(x, y);
+                double result = calculatorLogic.Add(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -54,7 +64,7 @@ namespace WindowsFormsApplication1
             {
                 double x = double.Parse(txtNum1.Text);
                 double y = double.Parse(txtNum2.Text);
-                double result = sub(x, y);
+                double result = calculatorLogic.Sub(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -69,7 +79,7 @@ namespace WindowsFormsApplication1
             {
                 double x = double.Parse(txtNum1.Text);
                 double y = double.Parse(txtNum2.Text);
-                double result = div(x, y);
+                double result = calculatorLogic.Div(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -84,7 +94,7 @@ namespace WindowsFormsApplication1
             {
                 double x = double.Parse(txtNum1.Text);
                 double y = double.Parse(txtNum2.Text);
-                double result = mul(x, y);
+                double result = calculatorLogic.Mul(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -188,28 +198,6 @@ namespace WindowsFormsApplication1
             
             currentTextBox.Text = newText;
         }
-
-        private double add(double x, double y)
-        {
-            return x + y;
-        }
-
-        private double sub(double x, double y)
-        {
-            return x - y;
-        }
-
-        private double div(double x, double y)
-        {
-            return x / y;
-        }
-
-        private double mul(double x, double y)
-        {
-            return x * y;
-        }
-
-        
 
     }
 }
