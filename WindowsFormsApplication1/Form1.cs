@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
         public Calculator()
         {
             InitializeComponent();
+            this.SetCurrentTextBox(txtNum1);
         }
 
         private TextBox currentTextBox;
@@ -24,28 +25,21 @@ namespace WindowsFormsApplication1
             this.currentTextBox = txtBox;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private TextBox GetCurrentTextBox()
         {
-           
+            return this.currentTextBox;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            txtNum1.Text = txtNum1.Text + "3";
-        }
+    
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtNum1.Text = txtNum1.Text + "1";
-        }
-
+       
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                int x = int.Parse(txtNum1.Text);
-                int y = int.Parse(txtNum2.Text);
-                int result = x + y;
+                double x = double.Parse(txtNum1.Text);
+                double y = double.Parse(txtNum2.Text);
+                double result = add(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -58,9 +52,9 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                int x = int.Parse(txtNum1.Text);
-                int y = int.Parse(txtNum2.Text);
-                int result = x - y;
+                double x = double.Parse(txtNum1.Text);
+                double y = double.Parse(txtNum2.Text);
+                double result = sub(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -73,9 +67,9 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                int x = int.Parse(txtNum1.Text);
-                int y = int.Parse(txtNum2.Text);
-                int result = x / y;
+                double x = double.Parse(txtNum1.Text);
+                double y = double.Parse(txtNum2.Text);
+                double result = div(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -88,9 +82,9 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                int x = int.Parse(txtNum1.Text);
-                int y = int.Parse(txtNum2.Text);
-                int result = x * y;
+                double x = double.Parse(txtNum1.Text);
+                double y = double.Parse(txtNum2.Text);
+                double result = mul(x, y);
                 lblResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -99,44 +93,123 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "1";
+        }
+
+
         private void btn2_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "2";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "2";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "3";
         }
 
         private void btn4_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "4";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "4";
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "5";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "5";
         }
 
         private void btn6_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "6";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "6";
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "7";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "7";
         }
 
         private void btn8_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "8";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "8";
         }
 
         private void btn9_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "9";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "9";
         }
 
         private void btn0_Click(object sender, EventArgs e)
         {
-            txtNum1.Text = txtNum1.Text + "0";
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += "0";
         }
+
+        private void periodBTN_Click(object sender, EventArgs e)
+        {
+            TextBox txt = this.GetCurrentTextBox();
+            txt.Text += ".";
+        }
+
+        private void txtNum1_Click(object sender, EventArgs e)
+        {
+            this.SetCurrentTextBox(txtNum1);
+        }
+
+        private void txtNum2_Click(object sender, EventArgs e)
+        {
+            this.SetCurrentTextBox(txtNum2);
+        }
+
+        private void clearBTN_Click(object sender, EventArgs e)
+        {
+            txtNum1.Clear();
+            txtNum2.Clear();
+            this.SetCurrentTextBox(txtNum1);
+        }
+
+        private void backspaceBTN_Click(object sender, EventArgs e)
+        {
+            TextBox currentTextBox = this.GetCurrentTextBox();
+            string currentTextBoxText = currentTextBox.Text;
+            string newText = "";
+
+            for (int i = 0; i < currentTextBoxText.Length -1 ; i++)
+                newText += currentTextBoxText[i];
+            
+            currentTextBox.Text = newText;
+        }
+
+        private double add(double x, double y)
+        {
+            return x + y;
+        }
+
+        private double sub(double x, double y)
+        {
+            return x - y;
+        }
+
+        private double div(double x, double y)
+        {
+            return x / y;
+        }
+
+        private double mul(double x, double y)
+        {
+            return x * y;
+        }
+
+        
+
     }
 }

@@ -45,6 +45,9 @@
             this.btnSub = new System.Windows.Forms.Button();
             this.btnDiv = new System.Windows.Forms.Button();
             this.btnMul = new System.Windows.Forms.Button();
+            this.clearBTN = new System.Windows.Forms.Button();
+            this.backspaceBTN = new System.Windows.Forms.Button();
+            this.periodBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNum1
@@ -54,6 +57,7 @@
             this.txtNum1.Name = "txtNum1";
             this.txtNum1.Size = new System.Drawing.Size(237, 20);
             this.txtNum1.TabIndex = 0;
+            this.txtNum1.Click += new System.EventHandler(this.txtNum1_Click);
             // 
             // txtNum2
             // 
@@ -62,6 +66,7 @@
             this.txtNum2.Name = "txtNum2";
             this.txtNum2.Size = new System.Drawing.Size(237, 20);
             this.txtNum2.TabIndex = 1;
+            this.txtNum2.Click += new System.EventHandler(this.txtNum2_Click);
             // 
             // lblResult
             // 
@@ -72,7 +77,6 @@
             this.lblResult.Size = new System.Drawing.Size(56, 13);
             this.lblResult.TabIndex = 2;
             this.lblResult.Text = "RESULT";
-            this.lblResult.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn1
             // 
@@ -196,9 +200,9 @@
             // 
             // btnDiv
             // 
-            this.btnDiv.Location = new System.Drawing.Point(9, 201);
+            this.btnDiv.Location = new System.Drawing.Point(12, 201);
             this.btnDiv.Name = "btnDiv";
-            this.btnDiv.Size = new System.Drawing.Size(109, 23);
+            this.btnDiv.Size = new System.Drawing.Size(75, 23);
             this.btnDiv.TabIndex = 15;
             this.btnDiv.Text = "/";
             this.btnDiv.UseVisualStyleBackColor = true;
@@ -206,20 +210,53 @@
             // 
             // btnMul
             // 
-            this.btnMul.Location = new System.Drawing.Point(134, 201);
+            this.btnMul.Location = new System.Drawing.Point(93, 201);
             this.btnMul.Name = "btnMul";
-            this.btnMul.Size = new System.Drawing.Size(115, 23);
+            this.btnMul.Size = new System.Drawing.Size(75, 23);
             this.btnMul.TabIndex = 16;
             this.btnMul.Text = "*";
             this.btnMul.UseVisualStyleBackColor = true;
             this.btnMul.Click += new System.EventHandler(this.btnMul_Click);
+            // 
+            // clearBTN
+            // 
+            this.clearBTN.Location = new System.Drawing.Point(12, 230);
+            this.clearBTN.Name = "clearBTN";
+            this.clearBTN.Size = new System.Drawing.Size(109, 23);
+            this.clearBTN.TabIndex = 17;
+            this.clearBTN.Text = "CLEAR";
+            this.clearBTN.UseVisualStyleBackColor = true;
+            this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
+            // 
+            // backspaceBTN
+            // 
+            this.backspaceBTN.Location = new System.Drawing.Point(140, 230);
+            this.backspaceBTN.Name = "backspaceBTN";
+            this.backspaceBTN.Size = new System.Drawing.Size(109, 23);
+            this.backspaceBTN.TabIndex = 18;
+            this.backspaceBTN.Text = "BACKSPACE";
+            this.backspaceBTN.UseVisualStyleBackColor = true;
+            this.backspaceBTN.Click += new System.EventHandler(this.backspaceBTN_Click);
+            // 
+            // periodBTN
+            // 
+            this.periodBTN.Location = new System.Drawing.Point(175, 201);
+            this.periodBTN.Name = "periodBTN";
+            this.periodBTN.Size = new System.Drawing.Size(75, 23);
+            this.periodBTN.TabIndex = 19;
+            this.periodBTN.Text = ".";
+            this.periodBTN.UseVisualStyleBackColor = true;
+            this.periodBTN.Click += new System.EventHandler(this.periodBTN_Click);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(262, 239);
+            this.ClientSize = new System.Drawing.Size(262, 269);
+            this.Controls.Add(this.periodBTN);
+            this.Controls.Add(this.backspaceBTN);
+            this.Controls.Add(this.clearBTN);
             this.Controls.Add(this.btnMul);
             this.Controls.Add(this.btnDiv);
             this.Controls.Add(this.btnSub);
@@ -265,6 +302,9 @@
         private System.Windows.Forms.Button btnSub;
         private System.Windows.Forms.Button btnDiv;
         private System.Windows.Forms.Button btnMul;
+        private System.Windows.Forms.Button clearBTN;
+        private System.Windows.Forms.Button backspaceBTN;
+        private System.Windows.Forms.Button periodBTN;
     }
 }
 
