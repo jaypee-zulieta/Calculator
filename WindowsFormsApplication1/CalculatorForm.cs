@@ -40,9 +40,6 @@ namespace WindowsFormsApplication1
             return this.currentTextBox;
         }
 
-    
-
-       
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -198,6 +195,8 @@ namespace WindowsFormsApplication1
             
             currentTextBox.Text = newText;
         }
+
+       
 
     }
 }

@@ -1,3 +1,9 @@
 C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\obj\Debug\CalculatorFormApplication.csprojResolveAssemblyReference.cache
+C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Calculator.resources
+C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\B-2\Desktop\Calculator\WindowsFormsApplication1\obj\Debug\CalculatorFormApplication.csproj.GenerateResource.Cache
